@@ -203,7 +203,7 @@ npm run deploy       # Deploy to Vercel
 
 ### Authentication Security
 
-- **Password Requirements:** Minimum 6 characters (Add your complexity on validatePassword.js file)
+- **Password Requirements:** Minimum 6 characters (Add your complexity on validatePassword() in validateFormFields.js file)
 - **Email Verification:** Required for account activation
 - **Session Management:** Secure JWT tokens with automatic refresh
 - **Rate Limiting:** Built-in Firebase protection against brute force attacks
