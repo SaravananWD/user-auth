@@ -1,0 +1,262 @@
+/* debug */
+
+.debug * {
+  outline: 1px dashed rgba(0, 0, 255, 0.3);
+}
+
+/* CSS reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Font Imports */
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Afacad";
+  src: url("../assets/fonts/Afacad-Regular.ttf") format("truetype");
+}
+
+/* CSS Variables */
+
+:root {
+  /* layout width */
+  --layout-max-width: 1028px; /* 4 x 257 = 1028 */
+  --para-max-width: 700px; /* 4 x 175 = 700 */
+
+  /* color palette */
+  --color-primary: hsl(240deg 100% 43.33%); /* 0000dd */
+  --color-primary-dark: hsl(240deg 100% 33%);
+  --color-primary-darker: hsl(240deg 100% 26.67%);
+  --color-primary-light: hsl(240deg 100% 90%); /*  e5e5ff */
+  --color-primary-lighter: hsl(240 100% 95%);
+  --color-disabled: hsl(240 25% 80%); /* bfbfd9 */
+  --color-secondary: #7d25ad; /* adjusted for contrast ratio from: hsl(279, 80%, 44%); */
+  --color-accent: #b33b00; /* adjusted for contrast ratio from: hsl(20, 80%, 44%); */
+  --color-bg: hsl(0, 0%, 96%);
+  --color-text: hsl(0, 0%, 7%);
+  --color-muted: hsl(210, 10%, 40%);
+  --color-surface: hsl(0, 0%, 91%);
+
+  --color-trans-text: rgba(0, 0, 0, 0.15);
+  --color-trans-bg: rgba(255, 255, 255, 0.3);
+
+  /* typography */
+  --logo-font: "Afacad", sans-serif;
+  --heading-font: "Bitter", serif;
+  --text-font: "Montserrat", sans-serif;
+  --text-font-weight: 500; /* Since "Montserrat" is a light font. */
+  --text-font-weight-bold: 600; /* Since "Montserrat" is a light font. */
+
+  --type-size-xs: 12px;
+  --type-size-sm: 16px;
+  --type-size-md: 20px;
+  --type-size-lg: 24px;
+  --type-size-xl: 32px;
+  --type-size-xxl: 40px;
+
+  --type-height-xs: 20px;
+  --type-height-sm: 28px;
+  --type-height-md: 32px;
+  --type-height-lg: 36px;
+  --type-height-xl: 44px;
+  --type-height-xxl: 48px;
+
+  /* for margin and padding */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-10: 40px;
+
+  /* radius */
+  --radius-md: 8px;
+
+  /* transitions */
+  --bg-transition: background 0.3s;
+  --transition-fast: 150ms ease;
+  --transition-slow: 300ms ease;
+}
+
+/* Basic Settings */
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: var(--text-font);
+  font-weight: var(--text-font-weight);
+}
+strong {
+  font-weight: var(--text-font-weight-bold);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: var(--space-5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  /* margin-top: var(--space-3); collapsing causes inconsistent output - fix! */
+}
+
+h1 {
+  font-size: var(--type-size-xxl);
+  line-height: var(--type-height-xxl);
+  margin-bottom: var(--space-6);
+}
+
+h2 {
+  font-size: var(--type-size-xl);
+  line-height: var(--type-height-xl);
+  padding-top: var(--space-5);
+}
+
+h3 {
+  font-size: var(--type-size-lg);
+  line-height: var(--type-height-lg);
+  padding-top: var(--space-4);
+}
+
+h4 {
+  font-size: var(--type-size-md);
+  line-height: var(--type-height-md);
+  padding-top: var(--space-3);
+}
+
+h5 {
+  font-size: var(--type-size-sm);
+  line-height: var(--type-height-xs);
+  padding-top: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+h6 {
+  font-size: var(--type-size-xs);
+  line-height: var(--type-height-xs);
+  padding-top: var(--space-1);
+}
+
+p {
+  font-size: var(--type-size-sm);
+  line-height: var(--type-height-sm);
+}
+
+ul {
+  margin-bottom: var(--space-4);
+}
+li {
+  margin-bottom: var(--space-1);
+}
+
+a.text-link {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+/* Margins */
+
+.mt5 {
+  margin-top: var(--space-5);
+}
+
+.mt10 {
+  margin-top: var(--space-10);
+}
+
+.mb2 {
+  margin-bottom: var(--space-2);
+}
+
+.pt0 {
+  padding-top: 0;
+}
+.pt1 {
+  padding-top: var(--space-1);
+}
