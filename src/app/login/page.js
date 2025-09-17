@@ -212,7 +212,7 @@ const SuccessOverlay = () => {
     </Overlay>
   );
 };
-// eslint-disable-next-line react/prop-types
+
 const PasswordResetPrompt = ({ email }) => {
   return (
     <Prompt>

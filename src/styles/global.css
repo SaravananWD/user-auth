@@ -110,6 +110,7 @@ h6 {
   --color-surface: hsl(0, 0%, 91%);
 
   --color-trans-text: rgba(0, 0, 0, 0.15);
+  --color-trans-text-darker: rgba(0, 0, 0, 0.75);
   --color-trans-bg: rgba(255, 255, 255, 0.3);
 
   /* typography */

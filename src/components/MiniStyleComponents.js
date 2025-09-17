@@ -36,8 +36,10 @@ export const Overlay = styled.div`
   span.overlayBlock {
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--color-text);
+    background-color: var(--color-trans-text-darker);
     padding: ${space(2)}px;
+    margin: ${space(2)}px;
+    border-radius: ${space(1)}px;
     align-items: center;
     justify-content: center;
   }
