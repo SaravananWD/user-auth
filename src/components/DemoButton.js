@@ -2,7 +2,6 @@
 import React from "react";
 import styled from "styled-components";
 import space from "@/utils/space";
-import PropTypes from "prop-types";
 
 function DemoButton({ children, mb = 0, icon, ...props }) {
   return (
@@ -12,12 +11,6 @@ function DemoButton({ children, mb = 0, icon, ...props }) {
     </StyledButton>
   );
 }
-
-DemoButton.propTypes = {
-  children: PropTypes.node.isRequired,
-  mb: PropTypes.number,
-  icon: PropTypes.node,
-};
 
 export default DemoButton;
 
