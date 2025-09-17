@@ -67,7 +67,7 @@ const DemoWrapper = ({ children }) => {
         border: "2px dashed var(--color-muted)",
         outline: "var(--space-2) solid var(--color-surface)",
         backgroundColor: "var(--color-surface)",
-        padding: "var(--space-4) ${space(4)}px",
+        padding: "var(--space-4) var(--space-4)",
         marginBottom: "var(--space-5)",
         borderRadius: "var(--space-3)",
         textAlign: "center",
