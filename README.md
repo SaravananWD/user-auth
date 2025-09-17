@@ -2,7 +2,7 @@
 
 **A comprehensive user management system implementing modern authentication patterns. Features secure user registration, session management, and role-based access control with protected routes—replicating the authentication flows that real applications require.**
 
-[![Demo](https://img.shields.io/badge/Demo-Live-brightgreen)](your-demo-link-here)
+[![Demo](https://img.shields.io/badge/Demo-Live-brightgreen)](https://user-auth-proto.vercel.app/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![React](https://img.shields.io/badge/React-19+-61DAFB.svg)](https://reactjs.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-15+-000000.svg)](https://nextjs.org/)
@@ -284,7 +284,7 @@ We welcome contributions! Please follow these steps:
 
 ## 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
