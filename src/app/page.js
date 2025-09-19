@@ -12,7 +12,7 @@ function AuthenticationHome() {
   return (
     <UnauthenticatedRoute>
       <AuthProtoHeader />
-      <p>Welcome! You need to log in to view this mini site’s content.</p>
+      <p>Welcome! You need to log in to view this mini site&rsquo;s content.</p>
       <Link href="/login">
         <DemoButton
           mb="5"
