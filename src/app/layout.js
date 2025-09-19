@@ -7,6 +7,7 @@ import "@/styles/global.css";
 import StyledComponentsRegistry from "@/lib/StyledComponentsRegistry";
 import AuthProvider from "@/context/AuthContext";
 import Wrapper from "@/components/Wrapper";
+import styled from "styled-components";
 
 export default function AuthPrototypeLayout({ children }) {
   return (
@@ -17,7 +18,32 @@ export default function AuthPrototypeLayout({ children }) {
             <AuthProvider>
               <DemoWrapper>{children}</DemoWrapper>
             </AuthProvider>
-            <Footer />
+            <Footer>
+              <span>
+                *User accounts may be periodically cleared for maintenance
+                purposes.
+              </span>
+              <span>
+                This demo showcases a user authentication system built by{" "}
+                <Link
+                  href="https://github.com/SaravananWD/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Saravanan
+                </Link>{" "}
+                during his systematic React development journey.
+                <br /> Source code available at{" "}
+                <Link
+                  href="https://github.com/SaravananWD/user-auth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </Link>
+                .
+              </span>
+            </Footer>
           </Wrapper>
         </StyledComponentsRegistry>
       </body>
@@ -28,36 +54,14 @@ export default function AuthPrototypeLayout({ children }) {
 AuthPrototypeLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-const Footer = () => {
-  return (
-    <div style={{ fontSize: "var(--type-size-xs)" }}>
-      <span
-        style={{
-          fontSize: "var(--type-size-xs)",
-          marginBottom: "12px",
-          display: "block",
-        }}
-      >
-        *User accounts may be periodically cleared for maintenance purposes.
-      </span>
-      <span>
-        This demo showcases a user authentication system built by Saravanan
-        during his systematic React development journey.
-      </span>{" "}
-      <br />
-      Source code available at{" "}
-      <Link
-        href="https://github.com/SaravananWD/user-auth"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub
-      </Link>
-      .
-    </div>
-  );
-};
+const Footer = styled.div`
+  font-size: var(--type-size-xs);
+  span {
+    font-size: var(--type-size-xs);
+    margin-bottom: 12px;
+    display: block;
+  }
+`;
 
 const DemoWrapper = ({ children }) => {
   return (
