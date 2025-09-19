@@ -113,83 +113,79 @@ function Login() {
 
   return (
     <UnauthenticatedRoute skipRedirect={skipUnauthRedirect}>
-      <>
-        <AuthProtoHeader>
-          {state.showLoginFields ? "Login" : "Reset Password"}
-        </AuthProtoHeader>
+      <AuthProtoHeader>
+        {state.showLoginFields ? "Login" : "Reset Password"}
+      </AuthProtoHeader>
 
-        {state.success && <SuccessOverlay />}
+      {state.success && <SuccessOverlay />}
 
-        {state.resetSent ? (
-          <PasswordResetPrompt email={email} />
-        ) : (
-          <FormWrapper>
-            <form onSubmit={handleSubmit}>
+      {state.resetSent ? (
+        <PasswordResetPrompt email={email} />
+      ) : (
+        <FormWrapper>
+          <form onSubmit={handleSubmit}>
+            <div className="auth-form-group">
+              <label htmlFor="email">Email address</label>
+              <input
+                disabled={state.loading}
+                autoComplete="email"
+                required
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            {state.showLoginFields && (
               <div className="auth-form-group">
-                <label htmlFor="email">Email address</label>
+                <label htmlFor="password">Password</label>
                 <input
-                  disabled={state.loading}
-                  autoComplete="email"
                   required
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={state.loading}
+                  autoComplete="current-password"
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              {state.showLoginFields && (
-                <div className="auth-form-group">
-                  <label htmlFor="password">Password</label>
-                  <input
-                    required
-                    disabled={state.loading}
-                    autoComplete="current-password"
-                    type="password"
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-              )}
-              {state.error && <Error>{state.error}</Error>}
-              {state.showLoginFields ? (
-                <AuthButton type="submit" disabled={state.loading}>
-                  {state.loading ? "Logging in..." : "Log in"}
-                </AuthButton>
-              ) : (
-                <AuthButton
-                  disabled={state.loading}
-                  onClick={handlePasswordReset}
-                >
-                  {state.loading ? "Sending..." : "Send reset link"}
-                </AuthButton>
-              )}
-            </form>
-
-            {state.showLoginFields ? (
-              <>
-                <LinkButton onClick={showPasswordResetView}>
-                  Forgot your password?
-                </LinkButton>
-                <p>
-                  Don&rsquo;t have an account?{" "}
-                  <Link href="signup">Sign up here</Link>.
-                </p>
-              </>
-            ) : (
-              <>
-                <p className="">
-                  Remember your password?{" "}
-                  <Link href="#" onClick={handleBackToLogin}>
-                    Back to Login
-                  </Link>
-                  .
-                </p>
-              </>
             )}
-          </FormWrapper>
-        )}
-      </>
+            {state.error && <Error>{state.error}</Error>}
+            {state.showLoginFields ? (
+              <AuthButton type="submit" disabled={state.loading}>
+                {state.loading ? "Logging in..." : "Log in"}
+              </AuthButton>
+            ) : (
+              <AuthButton
+                disabled={state.loading}
+                onClick={handlePasswordReset}
+              >
+                {state.loading ? "Sending..." : "Send reset link"}
+              </AuthButton>
+            )}
+          </form>
+
+          {state.showLoginFields ? (
+            <>
+              <LinkButton onClick={showPasswordResetView}>
+                Forgot your password?
+              </LinkButton>
+              <p>
+                Don&rsquo;t have an account?{" "}
+                <Link href="signup">Sign up here</Link>.
+              </p>
+            </>
+          ) : (
+            <p className="">
+              Remember your password?{" "}
+              <Link href="#" onClick={handleBackToLogin}>
+                Back to Login
+              </Link>
+              .
+            </p>
+          )}
+        </FormWrapper>
+      )}
     </UnauthenticatedRoute>
   );
 }
