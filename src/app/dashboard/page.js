@@ -121,7 +121,7 @@ function DashboardApp() {
               <h3>
                 Welcome, <AuthUsername>{user?.name}</AuthUsername>!
               </h3>
-              <p>You’re an authorized user of this demo prototype.</p>
+              <p>You&rsquo;re an authorized user of this demo prototype.</p>
               <p>
                 In a real project, this is where member-only content would
                 appear. As a registered user, you can now:
@@ -160,9 +160,9 @@ function DashboardApp() {
 
                   <p style={{ marginBottom: 0 }}>
                     The Star User icon above is visible only to you. It shows
-                    that you’re assigned the Admin role. Since this is just a
-                    prototype, you can change your role by editing your profile
-                    to test it out.
+                    that you&rsquo;re assigned the Admin role. Since this is
+                    just a prototype, you can change your role by editing your
+                    profile to test it out.
                   </p>
                 </div>
               </AdminContent>
@@ -226,16 +226,17 @@ const EmailVerificationAlert = ({
         mailSent ? (
           <Alert>
             <span className="auth-mailSent">
-              A new verification email has just been sent. If you don’t see it
-              in your inbox, check your spam folder. You can request another in{" "}
-              <span className="auth-countdown">({mailCount}s)</span>.
+              A new verification email has just been sent. If you don&rsquo;t
+              see it in your inbox, check your spam folder. You can request
+              another in <span className="auth-countdown">({mailCount}s)</span>.
             </span>
           </Alert>
         ) : (
           <Alert>
             <div className="maxWidth">
-              We’ve sent a verification link to your email. Please check your
-              inbox (and spam folder) and click the link to verify your account.
+              We&rsquo;ve sent a verification link to your email. Please check
+              your inbox (and spam folder) and click the link to verify your
+              account.
             </div>
             {mailError ? (
               <Error>{mailError}</Error>
