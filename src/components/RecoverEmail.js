@@ -128,8 +128,8 @@ const SuccessPrompt = ({ passwordResetError, restoredEmail }) => {
         </>
       ) : (
         <p className="text">
-          For your security, we’ve also sent a password reset link. Please reset
-          your password to keep your account safe.
+          For your security, we&rsquo;ve also sent a password reset link. Please
+          reset your password to keep your account safe.
         </p>
       )}
     </Prompt>

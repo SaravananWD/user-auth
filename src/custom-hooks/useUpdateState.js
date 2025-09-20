@@ -20,6 +20,8 @@ export default function useUpdateState(initialState) {
           for (const key in updates) {
             const prevVal = prev[key];
             const newVal = updates[key];
+
+            // Object check
             if (
               typeof prevVal === "object" &&
               prevVal !== null &&
@@ -29,9 +31,13 @@ export default function useUpdateState(initialState) {
               !Array.isArray(newVal)
             ) {
               result[key] = { ...prevVal, ...newVal };
-            } else if (Array.isArray(prevVal) && Array.isArray(newVal)) {
+            }
+            // Array check
+            else if (Array.isArray(prevVal) && Array.isArray(newVal)) {
               result[key] = [...newVal];
-            } else {
+            }
+            // If not array or object
+            else {
               result[key] = newVal;
             }
           }

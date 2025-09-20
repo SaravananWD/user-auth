@@ -121,7 +121,7 @@ function ChangePassword() {
                   <Spinner />
                 </span>
                 <span className="overlayText">
-                  Password updated! Redirecting to dashboard...
+                  Password updated! Redirecting to your dashboard...
                 </span>
               </span>
             </div>
